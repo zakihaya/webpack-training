@@ -20,6 +20,15 @@ module.exports = {
         test: /\.ts$/,
         // TypeScript をコンパイルする
         use: "ts-loader"
+      },
+      {
+        // enforce: 'pre'を指定することによって
+        // enforce: 'pre'がついていないローダーより早く処理が実行される
+        // 今回はts-loaderで変換する前にコードを検証したいため、指定が必要
+        enforce: 'pre',
+        test: /\.(js|ts)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
       }
     ]
   },
