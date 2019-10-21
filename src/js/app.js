@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import additionCalcurator from './modules/addition-calculator';
 import taxCalcurator from './modules/tax-calculator'
+import hello from './modules/hello'
 
 console.log('-----------------------------');
 console.log('test log');
@@ -15,3 +16,7 @@ var priceIncludeTax = taxCalcurator(totalPrice, tax);
 console.log(`totalPrice: ${totalPrice}`);
 console.log(`priceIncludeTax: ${priceIncludeTax}`);
 $('body').html(`priceIncludeTax: ${priceIncludeTax}`);
+
+console.log('-----------------------------');
+var greeting = hello('Ken');
+console.log(greeting);
